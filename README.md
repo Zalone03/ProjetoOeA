@@ -11,134 +11,196 @@ O objetivo foi criar uma interface para monitoramento de robôs RPA, permitindo 
 - Histórico de execuções
 - Logs das execuções
 
-## Tecnologias Utilizadas
+---
+
+# Tecnologias Utilizadas
+
 - React
 - Vite
-- React Router Dom
+- React Router DOM
 - Axios
 - TailwindCSS
 
-## Como Executar
+---
 
-### 1. Tenha Python 3.10+ instalado, não precisa instalar nada — só usa a biblioteca padrão do Python
+# Como Executar
+
+## 1. Verifique se possui Python 3.10+
+
+```bash
 python --version
+```
 
-### 2. Rode o servidor:
-python servidor2.py, baixavel no Github:
+## 2. Execute o servidor da API
 
-A API ficará disponível em http://localhost:8000.
+```bash
+python servidor2.py
+```
+
+O arquivo pode ser obtido em:
+
+https://github.com/Zalone03/ProjetoOeA/blob/main/servidor2.py
+
+![Download](docs/Baixe.png)
+
+A API ficará disponível em:
+
+```txt
+http://localhost:8000
+```
+
 Os dados são fictícios e gerados na inicialização.
 
-### 3. Acesse:  
-https://testerpa.netlify.app/ ou
+## 3. Acesse a aplicação
 
+```txt
+https://testerpa.netlify.app/
+```
 
-### 4. Permita o site acessar seu localhost:
-![permita](docs/permissão.png)
+## 4. Permita o acesso ao localhost
 
-## Estrutura do Projeto
-    src
-    │
-    ├── pages
-    │   ├── BotsPage
-    │   └── DetailsPage
-    │
-    ├── components
-    │   ├── ui
-    │   └── ux
-    │
-    ├── data
-    │   ├── api.js
-    │   ├── service.js
-    │   └── Routes.jsx
-    │
-    ├── utils
-        └── filterBots.js
+![Permissão](docs/permissão.png)
 
-
-## Decisões
-
-### React + Vite
-
-Escolhi React + Vite pela rapidez de configuração e desenvolvimento.
-
-### Axios
-
-Utilizado para facilitar e centralizar todas as chamadas da API em um único serviço.
-Isso facilitou:
-- manutenção
-- reutilização
-- legibilidade
-
-### TailwindCSS
-
-Escolhi Tailwind para acelerar a construção da interface e manter os estilos organizados.
-A abordagem baseada em utilitários me permitiu ajustar rapidamente:
-
-- Responsividade
-- Mudanças e decições Visuais
-
+## 5. Utilize a aplicação
 
 ---
 
-## Planejamento da API
+# Estrutura do Projeto
 
-Esse foi um rascunho que fiz antes de começar a implementação para entender melhor como usar o Axios e organizar as chamadas da API.
-
-![Planejamento da API](./docs/apiplan.jpeg)
-
-Nem tudo estava correto na Sintaxe, mas ele me ajudou a visualizar a estrutura antes de começar a codar. Os ajustes foram feitos durante a implementação como o AutoComplete do VSCode.
+```txt
+src
+│
+├── pages
+│   ├── BotsPage
+│   └── DetailsPage
+│
+├── components
+│   ├── ui
+│   └── ux
+│
+├── data
+│   ├── api.js
+│   ├── service.js
+│   └── Routes.jsx
+│
+├── utils
+│   └── filterBots.js
+```
 
 ---
 
-## Primeiras Ideias de Interface
+# Decisões Técnicas
 
-Na primeira conversa com Daniel, anotei algumas informações sobre o funcionamento dos RPAs e sobre a necessidade de acompanhar robôs, execuções e logs. Assim que pude, pesquisei um pouco mais sobre para entender melhor o funcionamento.
+## React + Vite
 
-![Interface](./docs/Interface1.jpeg)
+Escolhi React + Vite pela rapidez na configuração do projeto e pela agilidade do desenvolvimento.
 
-Oque me ajudou a montar a interface e seus rascunhos para organizar as informações na tela.
-A ideia principal foi deixar fácil encontrar um robô, visualizar suas execuções e acessar os logs e dar espaço pra escalabilidade.
+## Axios
+
+Utilizado para centralizar todas as chamadas da API em um único local.
+
+Benefícios:
+
+- manutenção simplificada
+- reutilização de código
+- melhor legibilidade
+
+## TailwindCSS
+
+Escolhi TailwindCSS para acelerar a construção da interface e manter os estilos organizados.
+
+A abordagem baseada em utilitários facilitou ajustes rápidos de:
+
+- responsividade
+- espaçamento
+- alinhamento
+- aparência visual
 
 ---
 
-## Organização Inicial
+# Planejamento da API
 
-Também fiz um rascunho da estrutura do projeto antes de começar a implementação.
+Antes da implementação, fiz um rascunho para entender melhor como organizar as chamadas HTTP utilizando Axios.
 
-![Organização](./docs/OrganizaçãoInicial.jpeg)
+![Planejamento da API](docs/apiplan.jpeg)
 
-A estrutura mudou um pouco durante o desenvolvimento, mas serviu como base para organizar páginas, componentes e serviços.
+Nem toda a sintaxe estava correta inicialmente, mas esse planejamento ajudou a visualizar a estrutura antes da implementação.
 
-Inicialmente pensei em utilizar uma tabela, já que o próprio desafio menciona uma listagem de robôs.
+Os ajustes foram realizados posteriormente durante o desenvolvimento utilizando documentação, pesquisas e ferramentas do VSCode.
 
-Durante os rascunhos percebi que os cards facilitavam a identificação visual do status de cada robô e deixavam as informações mais separadas. Para mim ficou mais rápido localizar um robô com problema do que em um formato parecido com planilha.
+---
+
+# Primeiras Ideias da Interface
+
+Na primeira conversa com Daniel, anotei informações sobre o funcionamento dos RPAs e sobre a necessidade de acompanhar:
+
+- robôs
+- execuções
+- logs
+
+Pesquisei um pouco mais sobre o tema para compreender melhor o contexto do desafio.
+
+![Interface](docs/Interface1.jpeg)
+
+Esses rascunhos ajudaram a organizar as informações que deveriam aparecer na tela.
+
+O objetivo foi criar uma interface simples para localizar robôs, visualizar execuções e consultar logs de forma rápida.
+
+---
+
+# Organização Inicial
+
+Também realizei um rascunho da estrutura do projeto antes de iniciar a implementação.
+
+![Organização](docs/OrganizaçãoInicial.jpeg)
+
+A estrutura evoluiu durante o desenvolvimento, mas serviu como base para organizar:
+
+- páginas
+- componentes
+- serviços
+
+Inicialmente considerei utilizar uma tabela, já que o desafio menciona uma listagem de robôs.
+
+Durante os testes percebi que os cards facilitavam a identificação visual dos status e tornavam as informações mais separadas visualmente.
 
 Por esse motivo optei por utilizar cards na tela principal.
 
-## Dificuldades Encontradas
+---
 
-A principal dificuldade foi entender a organização das chamadas da API utilizando Axios e como distribuir as responsabilidades entre páginas, componentes, serviços, E principalmente na distribuição de rotas que tenho dificuldade em decorar, mas logo matei esses problemas com pesquisas no ChatGPT e com documentos e intruçoes na web.
+# Dificuldades Encontradas
 
-![Organização](./docs/DuvidaRotas.png)
-![Organização](./docs/Axios.png)
+A principal dificuldade foi compreender a melhor forma de organizar:
 
-Também tive dificuldade inicial para estruturar os componentes React, principalmente entendendo quando criar componentes separados e quando manter algo na própria página.
-
-Para auxiliar no desenvolvimento, realizei alguns rascunhos antes de iniciar a implementação.
-### Após as pesquisas e testes consegui separar de forma mais organizada:
-- configuração da API
-- serviços
+- chamadas da API
+- rotas
 - componentes
+- responsabilidades entre arquivos
 
-Componentização
+Também tive dificuldades iniciais com React Router e com a distribuição das responsabilidades entre páginas e componentes.
 
-Outro desafio foi decidir:
+Para resolver esses pontos utilizei:
 
-quando criar um componente
-quando manter a lógica dentro da página
+- documentação oficial
+- pesquisas na web
+- ChatGPT
+- Gemini
 
-### Durante o desenvolvimento algumas partes foram refatoradas para componentes específicos:
+![Rotas](docs/DuvidaRotas.png)
+
+![Axios](docs/Axios.png)
+
+Outra dificuldade foi ajustar visualmente os indicadores de status para manter alinhamento consistente.
+
+![Status](docs/AjusteDosStatusParaEncaixar.png)
+
+---
+
+# Componentização
+
+Outro desafio foi decidir quando criar um componente separado e quando manter a lógica dentro da própria página.
+
+Durante o desenvolvimento algumas partes foram refatoradas para componentes específicos:
 
 - CardBot
 - ExecutionList
@@ -146,52 +208,168 @@ quando manter a lógica dentro da página
 - LogsList
 - RobotInfo
 
-Isso deixou o código mais reutilizável e fácil de manter num modelo:
-### UX (Experiência do Usuário) e UI (Interface do Usuário)
-Nunca vi alguem utilizar, mas funcionou bem para mim
+![Primeiro Resultado](docs/Inicio.png)
 
-## Ajustes e Validações
+Essa separação deixou o código mais reutilizável e mais fácil de manter.
 
-Durante o desenvolvimento realizei diversos testes visuais para verificar:
+---
 
+# Organização das Camadas
+
+Para organizar o projeto utilizei uma divisão simples entre responsabilidades.
+
+## data
+
+Responsável pelas chamadas HTTP.
+
+## pages
+
+Responsável pela composição das telas.
+
+## components/ui
+
+Componentes relacionados aos dados da aplicação.
+
+## components/ux
+
+Componentes reutilizáveis de interface.
+
+## utils
+
+Funções auxiliares reutilizáveis.
+
+Essa organização ajudou a evitar que componentes de interface precisassem conhecer detalhes de implementação da API.
+
+---
+
+# Ajustes e Validações
+
+Durante o desenvolvimento realizei diversos testes para validar:
+
+- comunicação com a API
 - alinhamentos
-- status
 - responsividade
 - legibilidade
-- Ajuste dos Status
+- comportamento dos status
+
+Primeira validação da comunicação entre React e API:
+
+![Validação](docs/validacao1.png)
+
+Nesse momento o objetivo era garantir que os dados estavam chegando corretamente.
+
+![Validação](docs/validacao1.1.png)
+
+Posteriormente realizei ajustes de:
+
+- tipografia
+- espaçamento
+- organização visual
+
+Também modifiquei temporariamente o servidor para gerar uma quantidade maior de robôs e validar o comportamento da interface.
+
+![Cards](docs/MomentosFinais+bots.png)
+
+Evolução da segunda tela:
+
+![Detalhes](docs/FinalSegundaTela.png)
 
 ---
 
 # Resultado Final
+
 ## Tela Principal
-![Tela](docs/TelaPrincipalD.png)
+
+![Tela Principal](docs/TelaPrincipalD.png)
 
 ## Tela de Detalhes
-![Tela](docs/DetailsD.png)
+
+![Tela Detalhes](docs/DetailsD.png)
 
 ---
 
 # Uso de Inteligência Artificial
 
-## Durante o desenvolvimento utilizei ChatGPT e Gemini como ferramenta de apoio e usos:
+Durante o desenvolvimento utilizei ChatGPT e Gemini como ferramentas de apoio técnico.
 
-- esclarecimento de dúvidas sobre React Router
-- organização de componentes
-- validação de ideias de arquitetura
-- auxílio na resolução de erros
-- consulta de boas práticas
+Principais usos:
 
-## Todas as decisões finais de implementação, estrutura e interface foram revisadas e adaptadas por mim durante o desenvolvimento.
-## Além do ChatGPT, também utilizei pesquisas em documentações oficiais e buscas na web para confirmar comportamentos e sintaxes.
+- esclarecimento de dúvidas de sintaxe
+- auxílio com React Router
+- sugestões de componentização
+- discussão de alternativas de arquitetura
+- apoio na interpretação de erros
+- sugestões de responsividade
+
+Exemplos:
+
+![Exemplo](docs/DetalheNaLetra.png)
+
+![Exemplo](docs/DetalheNaLetra1.png)
+
+As respostas não foram copiadas diretamente para produção sem validação.
+
+Todas as sugestões foram analisadas e testadas antes de serem incorporadas ao projeto.
 
 ---
 
-# Melhorias Futuras
+# Fontes de Estudo Utilizadas
 
-## Caso o projeto continuasse evoluindo ou tivesse mais tempo, eu adicionaria:
+Além da IA, também utilizei documentações, pesquisas e livros para validar informações:
 
-- filtros avançados por status(com um icone rápido)
+- Eloquent JavaScript: A Modern Introduction to Programming
+- The Road to Learn React
+- tailwindcss.com
+- freecodecamp.org
+- circleci.com
+- kufunda.net/publicdocs/
+
+---
+
+# Funcionalidades Implementadas
+
+## Página Principal
+
+- Listagem dos robôs
+- Status da última execução
+- Data da última execução
+- Navegação para detalhes
+- Indicadores visuais de status
+- Cards responsivos
+
+## Página de Detalhes
+
+- Dados completos do robô
+- Histórico de execuções
+- Consulta de logs sob demanda
+- Retorno para página principal
+
+## Bônus Implementados
+
+- Busca por nome e status
+- Layout responsivo para dispositivos móveis
+
+---
+
+# Melhorias Futuras de Limitações 
+
+Caso o projeto continuasse evoluindo, eu adicionaria:
+
+- filtros avançados por status
 - tema escuro
-- robos com erros aparecerem no topo da lista
-- gráficos
+- priorização de robôs com falha
+- gráficos de acompanhamento
 - notificações de falhas
+- tratamento visual para erros capturados
+---
+
+# Aprendizados
+
+Durante o desenvolvimento reforcei conhecimentos e identifiquei pontos nos quais ainda pretendo me aprofundar:
+
+- React Router
+- Componentização
+- Consumo de APIs REST
+- Axios
+- Organização de projetos React
+- TailwindCSS
